@@ -16,8 +16,6 @@ class State(TypedDict):
 # Ensure the API Key is set. 
 # Ideally, this should be in a .env file: GROQ_API_KEY=gsk_...
 # But we fallback to the one provided if not in env.
-if "GROQ_API_KEY" not in os.environ:
-    os.environ["GROQ_API_KEY"] = "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"
 llm = ChatGroq(
     model="openai/gpt-oss-20b",
     # api_key is automatically read from os.environ["GROQ_API_KEY"]
@@ -84,4 +82,5 @@ def chat_endpoint(data: ChatRequest):
     updated_history = [msg_to_dict(m) for m in result["messages"]]
     return {"reply": bot_reply, "history": updated_history}
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=5000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
