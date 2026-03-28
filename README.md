@@ -94,3 +94,9 @@ Use HTTPS in production
 📊 Data visualization dashboards
 ☁️ Cloud deployment (AWS / GCP / Azure)
 🔔 Alerts & financial reminders
+👨‍💻 Author
+
+Samaresh Debnath
+
+GitHub: https://github.com/Samar2442
+Email: samareshdebnath2442@gmail.com
